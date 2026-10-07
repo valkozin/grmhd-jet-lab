@@ -20,10 +20,15 @@ Open boundaries can reflect waves. Pressure floors and GLM cleaning have conserv
 
 ## Run locally
 
-From the repository root:
+Python 3.9+ is required for setup. From the repository root:
 
 ```sh
+python3 prepare.py
 python3 -m http.server 8000 --directory dist
 ```
 
 Open http://localhost:8000 in a WebGL2-capable browser. No build step is required. The primary viewer replays precomputed data; it does not run GRMHD in the browser. The legacy MHD solver runs locally in a Web Worker. Reproduction scripts and third-party source licenses are inside `dist/grmhd-repro.zip`.
+
+## Data packaging
+
+Computed visualization fields are stored losslessly in `dist/visualization-data.zip`. The reproducibility archive is split into three numbered parts to fit the upload limit. `prepare.py` restores both and verifies SHA-256 checksums. No simulation is rerun. Keep all three parts together. Source code and licenses for iharm2d_v4 and HARMPI are included in the restored reproducibility archive.

@@ -1,0 +1,4 @@
+__pycache__/
+dist/grmhd/
+dist/grmhd3d/
+dist/grmhd-repro.zip
